@@ -1,0 +1,26 @@
+This folder contains all the Google Cloud CLI (`gcloud`) commands used to build the Load Balanced Web Application.
+
+##  Purpose
+These commands were used to:
+- Create VPC and subnet
+- Configure firewall rules
+- Create instance templates
+- Deploy managed instance groups
+- Set up scalable infrastructure on GCP
+
+---
+
+##  Why CLI is used
+Using CLI ensures:
+- Automation of infrastructure
+- Repeatable deployments
+- Better understanding of cloud operations compared to only using UI
+
+## Commands Used
+>gcloud init
+>gcloud compute networks create my-vpc --subnet-mode=custom
+>gcloud compute networks subnets create my-subnet --network=my-vpc --range=10.0.1.0/24 --region=us-central1
+>gcloud compute firewall-rules create allow-http --network=my-vpc --allow=tcp:80 --source-ranges=0.0.0.0/0
+>gcloud compute instance-templates create web-template --machine-type=e2-micro --subnet=my-subnet --metadata=startup-script="#! /bin/bash apt update && apt install -y apache2 && echo \"Hello from \$(hostname)\" ^> /var/www/html/index.html"
+>gcloud compute instance-templates list
+>gcloud compute instance-groups managed create web-group --base-instance-name=web --template=web-template --size=2 --zone=us-central1-a
