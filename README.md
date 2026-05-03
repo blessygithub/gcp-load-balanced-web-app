@@ -63,8 +63,3 @@ User → HTTP Load Balancer → Managed Instance Group → Multiple VM Instances
 - Demonstrated Infrastructure as Code using gcloud CLI
 - Implemented real-world cloud architecture on GCP
 
-
-
-## 👨‍💻 Author
-Your Name  
-Cloud Computing Project – GCP Load Balancing Demo
