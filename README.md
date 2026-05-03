@@ -57,6 +57,17 @@ User → HTTP Load Balancer → Managed Instance Group → Multiple VM Instances
 
 ---
 
+##  Issues faced
+Health check initially showed UNHEALTHY due to firewall rules not allowing GCP health check IP ranges.
+
+## Fix Applied
+Updated firewall to allow:
+130.211.0.0/22
+35.191.0.0/16
+
+Result: Health check turned HEALTHY and load balancer started serving traffic.
+---
+
 ##  Outcome
 - Successfully deployed a scalable web application
 - Achieved high availability using load balancing
