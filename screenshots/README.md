@@ -4,3 +4,5 @@ This folder contains all project screenshots showing:
 - Load balancer configuration
 - Instance group
 - Instance template
+- health check satus
+- final output
